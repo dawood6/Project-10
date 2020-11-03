@@ -1,5 +1,4 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import Stepper from "@material-ui/core/Stepper";
 import Step from "@material-ui/core/Step";
 import StepLabel from "@material-ui/core/StepLabel";
@@ -34,11 +33,6 @@ export default function FormStepper() {
     const handleNext = () => {
         setActiveStep((prevActiveStep) => prevActiveStep + 1);
     };
-
-    const handleReset = () => {
-        setActiveStep(0);
-    };
-
     return (
         <div >
             <Stepper activeStep={activeStep} alternativeLabel>
@@ -55,9 +49,6 @@ export default function FormStepper() {
                             All steps completed
                             <AnimatedChekmark />
                         </Typography>
-                        <Button variant="contained" color="primary" onClick={handleReset}>
-                            Reset
-            </Button>
                     </div>
                 ) : (
                         <div>
